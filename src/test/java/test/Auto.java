@@ -20,15 +20,15 @@ public class Auto {
 	}
 	
 	String verificarIntegridad() {
+		if(registro!=motor.registro) {
+			return "Las piezas no son originales";
+		}		
 		String verificado = "Las piezas no son originales";
 		boolean aux= true;
 		for (int x=0;x<asientos.length; x++) {
-			if(asientos[x].registro!=registro) {
-				aux = false;}
+			if(asientos[x] instanceof Asiento & asientos[x].registro!=registro) {
+				return "Las piezas no son originales";}
 		}
-		if(registro==motor.registro & aux) {
-			verificado = "Auto original";
-		}
-		return verificado;
+		return "Auto original";
 	}
 }
