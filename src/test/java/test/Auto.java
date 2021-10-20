@@ -12,7 +12,7 @@ public class Auto {
 	int cantidadAsientos() {
 		int cantidad = 0;
 		for (int x=0;x<asientos.length; x++) {
-			if(asientos[x].getClass()==Asiento.class) {
+			if(asientos[x] instanceof Asiento) {
 				cantidad++;
 			}
 		}
